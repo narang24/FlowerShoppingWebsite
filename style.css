@@ -80,7 +80,7 @@ body{
 /* hero section */
 .main {
     position: absolute;
-    top: 50%;
+    top:25rem;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -117,12 +117,15 @@ body{
     /* border: 2px solid black; */
     margin: 5rem auto; 
     padding: 3rem;
-    width: 80%;
+    width: 100vw;
     max-width: 900px;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    background-image: url('images/pink_background.avif');
+    border-radius: 250rem;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://img.freepik.com/premium-photo/pink-tulips-pink-background-with-copy-space_130265-8578.jpg');
+    background-repeat: no-repeat;
     border: radius 5px; 
      box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.8);
      transition: box-shadow 0.5s ease-in-out;
