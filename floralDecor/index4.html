@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom Decor - Floral Decorations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color:#f89bbd;
+            
+            color: #333;
+        }
+        
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/0.0.1/img/placeholder-large.png');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: #4a6741;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px; 
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        nav ul li a:hover {
+            color: #f8e3a3;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #cd7f32;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: #b26d29;
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        section {
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color:  rgb(88, 40, 80);;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #cd7f32;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .event-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .event-details {
+            padding: 20px;
+        }
+        
+        .event-details h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: rgb(88, 40, 80);;
+        }
+        
+        footer {
+            background-color: #4a6741;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #f8e3a3;
+        }
+        
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-box h3 {
+            color: rgb(88, 40, 80);
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin: 0 8px;
+            }
+           
+        }
+        .hii{
+            margin-top: 20px;
+        }
+        .hii1{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    
+
+    <section id="events" class="container">
+        <h2>Events We've Decorated</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <img src= https://www.weddingsinhouston.com/uploads/real_weddings/rebecca-christian/RW-Becca---Christian---MichaelCarrPhotography-PlantsNPetals-JoanPillow-BellaBroidesmaids-SusiesCakes-Confections-2818-HIRES.jpg height="250">
+                </div>
+                <div class="event-details">
+                   
+                    <h3>Elegant Weddings</h3>
+                    <p>Our bespoke wedding decorations create the perfect backdrop for your special day. From romantic arches to stunning centerpieces.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://ambrosiaeventsmke.com/wp-content/uploads/2022/01/Linens-1.jpg" height="250">
+                </div>
+                <div class="event-details">
+                    <h3>Corporate Events</h3>
+                    <p>Elevate your corporate gatherings with sophisticated floral arrangements that reflect your company's vision and style.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image" >
+                    <img src="https://th.bing.com/th/id/OIP.J7b0SDVCQdaWMiTz-mmVdAHaE7?w=2000&h=1333&rs=1&pid=ImgDetMain" height="250">
+                </div>
+                <div class="event-details">
+                    <h3>Lavish Galas</h3>
+                    <p>Transform your venue into a breathtaking environment with our show-stopping installations and unique floral designs.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://th.bing.com/th/id/OIP.K3jKCGUTzE7WGV07LGCrwgHaFj?rs=1&pid=ImgDetMain" height="276">
+                </div>
+                <div class="hii">
+                <div class="event-details">
+                    <h3>Birthday Celebrations</h3>
+                    <p>Make your milestone moments unforgettable with vibrant and personalized floral arrangements that capture the spirit of celebration.</p>
+                </div>
+            </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image" >
+                    <img src="https://www.devilsthumbranch.com/wp-content/uploads/BRIDES-Wedding-2-Clark-Brewer-Photography-1024x751.png" height="270">
+                </div>
+                <div class="hii1">
+                <div class="event-details">
+                    <h3>Intimate Gatherings</h3>
+                    <p>Add warmth and charm to your intimate events with delicate floral touches that create a welcoming atmosphere.</p>
+                </div>
+            </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://th.bing.com/th/id/OIP.ayq0P7EnJm9a1N67wDXZsQHaE8?rs=1&pid=ImgDetMain" height="250">
+                </div>
+                <div class="event-details">
+                    <h3>Seasonal Celebrations</h3>
+                    <p>Embrace the beauty of each season with our themed decorations that highlight the natural splendor of seasonal blooms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <h2>Our Floral Services</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <h3>Custom Arrangements</h3>
+                <p>Personalized floral designs tailored to your specific event theme and color palette. We work closely with you to bring your vision to life.</p>
+            </div>
+            <div class="service-box">
+                <h3>Venue Decoration</h3>
+                <p>Complete transformation of your venue with strategic floral installations that enhance the space and create an immersive atmosphere.</p>
+            </div>
+            <div class="service-box">
+                <h3>Consultation</h3>
+                <p>Expert advice to help you choose the perfect flowers for your special occasion, taking into account seasonality, color schemes, and budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to bring your event to life with exquisite floral decorations?</p>
+            <p>Email: info@blossomdecor.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <div class="social-icons">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+            </div>
+            <p>&copy; 2025 Blossom Decor. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
