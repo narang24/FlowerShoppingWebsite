@@ -39,7 +39,16 @@
         } 
         .color-selected {
             border:2px solid rgb(254 205 211);
-        }    
+        }  
+        .color-opt1 {
+            background-color: #eeddcc;
+        }
+        .color-opt2 {
+            background-color:#e3b100;
+        }
+        .color-opt3 {
+            background-color: #dc5000;
+        }
       </style>
 </head>
 <body class="text-white bg-color">
@@ -85,6 +94,7 @@
                     <p class="font-mono tracking-wide text-lg">Highly fragrant</p>        
                 </div>
             </div>
+            <div class="mt-4 mr-1 w-max h-12 p-3 text-lg flex justify-center items-center text-rose-100 rounded-xl border-2 border-rose-200 font-mono">Price: $8</div>
             <button class="save-btn mt-4 mr-1 w-max h-12 p-3 text-lg flex justify-center items-center text-rose-100 rounded-xl hover:cursor-pointer border-2 border-rose-200 font-mono">Add to Cart</button>
         </div>
 
@@ -110,9 +120,9 @@
             <div class="img-sec h-2/5 w-full absolute right-0 bottom-0 rounded-tl-4xl rounded-br-4xl bg flex justify-center items-center">
             <!-- color-pallette -->
                <div class="color-opt h-1/2 w-1/4 flex absolute bottom-5 justify-between items-center z-10">
-                    <div class="color h-12 w-12 rounded-full bg-red-900 hover:cursor-pointer hover:border-2 hover:border-rose-200 color-selected"></div>
-                    <div class="color h-12 w-12 rounded-full bg-teal-950 hover:cursor-pointer hover:border-2 hover:border-rose-200"></div>
-                    <div class="color h-12 w-12 rounded-full bg-pink-800 hover:cursor-pointer hover:border-2 hover:border-rose-200"></div>
+                    <div class="color h-12 w-12 rounded-full color-opt1 hover:cursor-pointer hover:border-2 hover:border-rose-200 color-selected"></div>
+                    <div class="color h-12 w-12 rounded-full color-opt2 hover:cursor-pointer hover:border-2 hover:border-rose-200"></div>
+                    <div class="color h-12 w-12 rounded-full color-opt3 hover:cursor-pointer hover:border-2 hover:border-rose-200"></div>
                </div>
             </div>
         </div>

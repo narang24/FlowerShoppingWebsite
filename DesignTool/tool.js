@@ -13,8 +13,8 @@ let sources=["assets/lily.jpg","assets/foliage.png","assets/ribbon.png","assets/
 
 let colorSources=[
     ["assets/lily.jpg","assets/lily2.png","assets/lily3.png"],
-    ["assets/foliage.jpg","assets/foliage2.png","assets/foliage3.jpg"],
-    ["assets/ribbon.jpg","assets/ribbon2.png","assets/ribbon3.jpg"],
+    ["assets/foliage.png","assets/foliage2.png","assets/foliage3.png"],
+    ["assets/ribbon.png","assets/ribbon2.png","assets/ribbon3.jpg"],
     ["assets/template.png","assets/template2.png","assets/template3.png"],
 ]
 
@@ -26,7 +26,8 @@ let elements=[
         ["FRESHNESS (VASE LIFE)","5-7 Days"],
         ["SEASONALITY","May-July"],
         ["SCENT","Highly fragrant"]
-        ]
+        ],
+        colorHex:["#eeddcc","#e3b100","#dc5000"]
     },
     {
         heading:"FOLIAGE",
@@ -35,7 +36,8 @@ let elements=[
         ["FRESHNESS (VASE LIFE)","2-3 Weeks"],
         ["SEASONALITY","Evergreen"],
         ["SCENT","Scentless"]
-        ]
+        ],
+        colorHex:["#5b6d44","#344812","#80763f"]
     },
     {   heading:"RIBBON",
         details:[
@@ -43,12 +45,15 @@ let elements=[
         ["MATERIAL","Satin (Polyster-based)"],
         ["WIDTH","1 to 1.5 inches"],
         ["TEXTURE","Silky and Smooth"]
-        ]
+        ],
+        colorHex:["#9f6450","#ddb293","#dc5000"]
     },
     {
         heading:"GREETING CARD",
+        colorHex:["#d9c8a9","#f9c799","#dc5000"]
     }
 ]
+
 
 function saveGreetings() {
     greetingText.forEach((ele,key)=> {
@@ -68,6 +73,12 @@ function colorChange() {
         color.classList.remove("color-selected")
     })
 }
+
+// function colorHexChange(key,idx) {
+//     colors.forEach((color)=> {
+//       color.classList.add(`bg-[${elements[key].colorHex[idx]}]`)
+//     })
+// }
 
 const changeElement=(key)=> {
     element.innerText=elements[key].heading
@@ -99,6 +110,7 @@ const changeElement=(key)=> {
     colors.forEach((val,idx)=> {
         val.addEventListener("click",()=>{
             pngImage.src=(colorSources[key])[idx]
+            // colorHexChange(key,idx)
 
             colorChange()
             val.classList.add("color-selected")
